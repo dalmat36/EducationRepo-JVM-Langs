@@ -11,3 +11,11 @@ val dt = odt.atZoneSameInstant(ZoneId.of("UTC")).toOffsetDateTime
 //Convert OffsetDateTime to Timestamp
 val ldt = odt.toLocalDateTime
 val tm = Timestamp.valueOf(ldt)
+
+//Format DateTime using Pattern
+    val processDateTime = Instant.now()
+    val formatter =
+      DateTimeFormatter.ofPattern("MM-dd-yyyy-hhmmss")
+        .withLocale( Locale.US )
+        .withZone( ZoneId.of("Z") )
+    formatter.format(processDateTime)
